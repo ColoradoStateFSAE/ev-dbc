@@ -56,10 +56,10 @@ BO_ 170 M170_Internal_States: 8 INV
  SG_ bms_trq_limit : 58|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ bms_active : 57|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ direction : 56|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ enable_lockout : 55|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ lockout_enabled : 55|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ start_mode : 54|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ inv_enabled : 48|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ cmd_mode : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ command_mode : 40|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ discharge_state : 37|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ run_mode : 32|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ relay_6_status : 29|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -69,7 +69,7 @@ BO_ 170 M170_Internal_States: 8 INV
  SG_ relay_2_status : 25|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ relay_1_status : 24|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ inverter_state : 16|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ pwm_freq : 8|8@1+ (1,0) [0|255] "kHz" Vector__XXX
+ SG_ pwm_frequency : 8|8@1+ (1,0) [0|255] "kHz" Vector__XXX
  SG_ vsm_state : 0|8@1+ (1,0) [0|15] "" Vector__XXX
 
 BO_ 168 M168_Flux_ID_IQ_Info: 8 INV
@@ -89,7 +89,7 @@ BO_ 166 M166_Current_Info: 8 INV
  SG_ phase_a_current : 0|16@1- (0.1,0) [-3276.8|3276.7] "current:A" Vector__XXX
 
 BO_ 165 M165_Motor_Position_Info: 8 INV
- SG_ elec_freq : 32|16@1- (0.1,0) [-3276.8|3276.7] "frequency:Hz" Vector__XXX
+ SG_ electric_freq : 32|16@1- (0.1,0) [-3276.8|3276.7] "frequency:Hz" Vector__XXX
  SG_ motor_speed : 16|16@1- (1,0) [-32768|32767] "angular_speed:rpm" Vector__XXX
  SG_ motor_angle : 0|16@1+ (0.1,0) [0|6553.5] "angle:deg" Vector__XXX
 
@@ -130,8 +130,8 @@ BO_ 160 M160_Temperature_Set_1: 8 INV
  SG_ module_a_temp : 0|16@1- (0.1,0) [-3276.8|3276.7] "temperature:C" Vector__XXX
 
 BO_ 514 BMS_Current_Limit: 8 BMS
- SG_ max_charge_cur : 16|16@1+ (1,0) [0|1000] "current:A" Vector__XXX
- SG_ max_dischg_cur : 0|16@1+ (1,0) [0|1000] "current:A" Vector__XXX
+ SG_ max_charge_curr : 16|16@1+ (1,0) [0|1000] "current:A" Vector__XXX
+ SG_ max_dischg_curr : 0|16@1+ (1,0) [0|1000] "current:A" Vector__XXX
 
 
 
@@ -150,11 +150,11 @@ CM_ SG_ 170 bms_trq_limit "0 = Not Limiting, 1 = Limiting";
 CM_ SG_ 170 bms_active "0 = BMS Not Active, 1 = BMS Active";
 CM_ SG_ 170 direction "1 = Forward
 0 = 'Reverse' if inverter enabled  & 'Stopped' if inverter is disabled";
-CM_ SG_ 170 enable_lockout "0=Lockout Disabled, 1=Lockout Enabled";
+CM_ SG_ 170 lockout_enabled "0=Lockout Disabled, 1=Lockout Enabled";
 CM_ SG_ 170 start_mode "If in Key Switch Mode 1 then indicates status of Start input being applied.  0 = not active, 1 = active";
 CM_ SG_ 170 inv_enabled "0=Inverter Disabled, 
 1=Inverter Enabled";
-CM_ SG_ 170 cmd_mode "0=CAN mode, 1=VSM mode";
+CM_ SG_ 170 command_mode "0=CAN mode, 1=VSM mode";
 CM_ SG_ 170 discharge_state "0 = Disabled, 1 = Enabled, 2 = Speed Check, 3 = Active, 4 = Complete";
 CM_ SG_ 170 run_mode "0=Torque Mode, 1=Speed Mode";
 CM_ SG_ 170 relay_6_status "0=OFF, 1=ON";
@@ -164,7 +164,7 @@ CM_ SG_ 170 relay_3_status "0=OFF, 1=ON";
 CM_ SG_ 170 relay_2_status "0=OFF, 1=ON";
 CM_ SG_ 170 relay_1_status "0=OFF, 1=ON";
 CM_ SG_ 170 inverter_state "Different states for the inverter state machine";
-CM_ SG_ 170 pwm_freq "The inverter PWM frequency";
+CM_ SG_ 170 pwm_frequency "The inverter PWM frequency";
 CM_ SG_ 170 vsm_state "Different states for the vehicle state machine";
 CM_ SG_ 168 iq_feedback "The measured Iq current";
 CM_ SG_ 168 id_feedback "The measured Id current";
@@ -176,7 +176,7 @@ CM_ SG_ 166 dc_bus_current "The Calculated DC Bus Current";
 CM_ SG_ 166 phase_c_current "The measured value of Phase C current";
 CM_ SG_ 166 phase_b_current "The measured value of Phase B current";
 CM_ SG_ 166 phase_a_current "The measured value of Phase A current";
-CM_ SG_ 165 elec_freq "The actual electrical frequency of the inverter";
+CM_ SG_ 165 electric_freq "The actual electrical frequency of the inverter";
 CM_ SG_ 165 motor_speed "The measured speed of the motor";
 CM_ SG_ 165 motor_angle "The Electrical Angle of the motor as read by the encoder or resolver";
 CM_ SG_ 164 digital_input_8 "Status of Digital Input #8";
@@ -207,8 +207,8 @@ CM_ SG_ 160 module_c_temp "IGBT Module C Temperature";
 CM_ SG_ 160 module_b_temp "IGBT Module B Temperature";
 CM_ SG_ 160 module_a_temp "IGBT Module A Temperature";
 CM_ BO_ 514 "Message sent by BMS for inverter DC current limiting.";
-CM_ SG_ 514 max_charge_cur "Maximum charge current from BMS";
-CM_ SG_ 514 max_dischg_cur "Maximum discharge current from BMS";
+CM_ SG_ 514 max_charge_curr "Maximum charge current from BMS";
+CM_ SG_ 514 max_dischg_curr "Maximum discharge current from BMS";
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
 BA_DEF_DEF_  "GenMsgCycleTime" 0;
 BA_ "GenMsgCycleTime" BO_ 172 10;

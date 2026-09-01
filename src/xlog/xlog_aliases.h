@@ -1,0 +1,15 @@
+#pragma once
+#include "xlog.h"
+
+#define xlog_h XLOG_H
+#define xlog_lap_time_frame_id XLOG_LAP_TIME_FRAME_ID
+#define xlog_lap_frame_id XLOG_LAP_FRAME_ID
+#define xlog_lap_time_length XLOG_LAP_TIME_LENGTH
+#define xlog_lap_length XLOG_LAP_LENGTH
+#define xlog_lap_time_is_extended XLOG_LAP_TIME_IS_EXTENDED
+#define xlog_lap_is_extended XLOG_LAP_IS_EXTENDED
+#define xlog_lap_time_name XLOG_LAP_TIME_NAME
+#define xlog_lap_name XLOG_LAP_NAME
+#define xlog_lap_time_lap_time_name XLOG_LAP_TIME_LAP_TIME_NAME
+#define xlog_lap_time_ref_time_name XLOG_LAP_TIME_REF_TIME_NAME
+#define xlog_lap_lap_name XLOG_LAP_LAP_NAME
