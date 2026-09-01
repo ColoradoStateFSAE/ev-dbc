@@ -32,7 +32,7 @@ jobs:
 
       - name: Generate C source from DBC
         run: |
-          python scripts/generate_code.py
+          python scripts/generate.py
 
       - name: Determine new version
         id: version
