@@ -1,0 +1,10 @@
+#pragma once
+#include "swc.h"
+
+#define swc_h SWC_H
+#define swc_buttons_frame_id SWC_BUTTONS_FRAME_ID
+#define swc_buttons_length SWC_BUTTONS_LENGTH
+#define swc_buttons_is_extended SWC_BUTTONS_IS_EXTENDED
+#define swc_buttons_name SWC_BUTTONS_NAME
+#define swc_buttons_encoder_button_name SWC_BUTTONS_ENCODER_BUTTON_NAME
+#define swc_buttons_encoder_amount_name SWC_BUTTONS_ENCODER_AMOUNT_NAME

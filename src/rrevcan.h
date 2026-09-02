@@ -11,6 +11,9 @@
 #include "pm100dx/pm100dx.h"
 #include "pm100dx/pm100dx_aliases.h"
 
+#include "swc/swc.h"
+#include "swc/swc_aliases.h"
+
 #include "xlog/xlog.h"
 #include "xlog/xlog_aliases.h"
 
