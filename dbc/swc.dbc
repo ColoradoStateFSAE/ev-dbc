@@ -42,11 +42,8 @@ BO_ 2147487744 buttons: 3 Vector__XXX
 
 
 
-
 BA_DEF_  "BusType" STRING ;
-BA_DEF_ BO_  "VFrameFormat" ENUM  "StandardCAN","ExtendedCAN","reserved","J1939PG";
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 0;
 BA_DEF_DEF_  "BusType" "CAN";
 BA_DEF_DEF_  "GenMsgCycleTime" 0;
-
 
