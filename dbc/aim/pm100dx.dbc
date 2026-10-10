@@ -37,10 +37,10 @@ BU_:
 
 
 BO_ 173 M173_Modulation_And_Flux_Info: 8 INV
- SG_ mod_index : 0|16@1- (0.0001,0) [0|3.2767] "" Vector__XXX
+ SG_ mod_index : 0|16@1- (0.0001,0) [-3.2768|3.2767] "" Vector__XXX
 
 BO_ 172 M172_Torque_And_Timer_Info: 8 INV
- SG_ power_on_timer : 32|32@1+ (0.003,0) [0|12884800] "time:sec" Vector__XXX
+ SG_ power_on_timer : 32|32@1+ (0.003,0) [0|12884800] "time:second" Vector__XXX
  SG_ torque_fb : 16|16@1- (0.1,0) [-3276.8|3276.7] "torque:N.m" Vector__XXX
  SG_ torque_cmd : 0|16@1- (0.1,0) [-3276.8|3276.7] "torque:N.m" Vector__XXX
 
@@ -52,12 +52,9 @@ BO_ 171 M171_Fault_Codes: 8 INV
 
 BO_ 170 M170_Internal_States: 8 INV
  SG_ low_spd_limit : 61|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ max_spd_limit : 59|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ bms_trq_limit : 58|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ bms_active : 57|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ direction : 56|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ lockout_enabled : 55|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ start_mode : 54|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ inv_enabled : 48|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ command_mode : 40|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ discharge_state : 37|3@1+ (1,0) [0|7] "" Vector__XXX
@@ -69,7 +66,7 @@ BO_ 170 M170_Internal_States: 8 INV
  SG_ relay_2_status : 25|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ relay_1_status : 24|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ inverter_state : 16|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ pwm_frequency : 8|8@1+ (1,0) [0|255] "kHz" Vector__XXX
+ SG_ pwm_frequency : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ vsm_state : 0|8@1+ (1,0) [0|15] "" Vector__XXX
 
 BO_ 168 M168_Flux_ID_IQ_Info: 8 INV
@@ -107,31 +104,13 @@ BO_ 163 M163_Analog_Input_Voltages: 8 INV
  SG_ analog_input_6 : 52|10@1+ (0.01,0) [0|10.23] "voltage:V" Vector__XXX
  SG_ analog_input_5 : 42|10@1+ (0.01,0) [0|10.23] "voltage:V" Vector__XXX
  SG_ analog_input_4 : 32|10@1+ (0.01,0) [0|10.23] "voltage:V" Vector__XXX
- SG_ analog_input_3 : 20|10@1+ (0.01,0) [0|10.23] "voltage:V" Vector__XXX
- SG_ analog_input_2 : 10|10@1+ (0.01,0) [0|10.23] "voltage:V" Vector__XXX
- SG_ analog_input_1 : 0|10@1+ (0.01,0) [0|10.23] "voltage:V" Vector__XXX
 
 BO_ 162 M162_Temperature_Set_3: 8 INV
  SG_ torque_shudder : 48|16@1- (0.1,0) [-3276.8|3276.7] "torque:N.m" Vector__XXX
- SG_ motor_temp : 32|16@1- (0.1,0) [-3276.8|3276.7] "temperature:C" Vector__XXX
- SG_ hotspot_temp : 16|16@1- (0.1,0) [-3276.8|3276.7] "temperature:C" Vector__XXX
- SG_ coolant_temp : 0|16@1- (0.1,0) [-3276.8|3276.7] "temperature:C" Vector__XXX
 
 BO_ 161 M161_Temperature_Set_2: 8 INV
- SG_ rtd3_temp : 48|16@1- (0.1,0) [-3276.8|3276.7] "temperature:C" Vector__XXX
  SG_ rtd2_temp : 32|16@1- (0.1,0) [-3276.8|3276.7] "temperature:C" Vector__XXX
  SG_ rtd1_temp : 16|16@1- (0.1,0) [-3276.8|3276.7] "temperature:C" Vector__XXX
- SG_ ctrl_board_temp : 0|16@1- (0.1,0) [-3276.8|3276.7] "temperature:C" Vector__XXX
-
-BO_ 160 M160_Temperature_Set_1: 8 INV
- SG_ gate_drive_temp : 48|16@1- (0.1,0) [-3276.8|3276.7] "temperature:C" Vector__XXX
- SG_ module_c_temp : 32|16@1- (0.1,0) [-3276.8|3276.7] "temperature:C" Vector__XXX
- SG_ module_b_temp : 16|16@1- (0.1,0) [-3276.8|3276.7] "temperature:C" Vector__XXX
- SG_ module_a_temp : 0|16@1- (0.1,0) [-3276.8|3276.7] "temperature:C" Vector__XXX
-
-BO_ 514 BMS_Current_Limit: 8 BMS
- SG_ max_charge_curr : 16|16@1+ (1,0) [0|1000] "current:A" Vector__XXX
- SG_ max_dischg_curr : 0|16@1+ (1,0) [0|1000] "current:A" Vector__XXX
 
 
 
@@ -144,18 +123,15 @@ CM_ SG_ 171 run_fault_hi "Each bit represents a fault. Please refer to PM100 Use
 CM_ SG_ 171 run_fault_lo "Each bit represents a fault. Please refer to PM100 Users Manual for details.";
 CM_ SG_ 171 post_fault_hi "Each bit represents a fault. Please refer to PM100 Users Manual for details.";
 CM_ SG_ 171 post_fault_lo "Each bit represents a fault. Please refer to PM100 Users Manual for details.";
-CM_ SG_ 170 low_spd_limit "0 = Not Limiting, 1 = Current limiting due to low motor speed";
-CM_ SG_ 170 max_spd_limit "0 = Not Limiting, 1 = torque limiting due to maximum speed";
-CM_ SG_ 170 bms_trq_limit "0 = Not Limiting, 1 = Limiting";
+CM_ SG_ 170 low_spd_limit "Indicates that motor current is being limited due to low motor electrical frequency.";
 CM_ SG_ 170 bms_active "0 = BMS Not Active, 1 = BMS Active";
 CM_ SG_ 170 direction "1 = Forward
 0 = 'Reverse' if inverter enabled  & 'Stopped' if inverter is disabled";
 CM_ SG_ 170 lockout_enabled "0=Lockout Disabled, 1=Lockout Enabled";
-CM_ SG_ 170 start_mode "If in Key Switch Mode 1 then indicates status of Start input being applied.  0 = not active, 1 = active";
 CM_ SG_ 170 inv_enabled "0=Inverter Disabled, 
 1=Inverter Enabled";
 CM_ SG_ 170 command_mode "0=CAN mode, 1=VSM mode";
-CM_ SG_ 170 discharge_state "0 = Disabled, 1 = Enabled, 2 = Speed Check, 3 = Active, 4 = Complete";
+CM_ SG_ 170 discharge_state "0 = Disabled, 1 = Enabled, 2 = Speed Check, 3 = Active, 4 = Complete, 5 = Error, 6 = Override, 7 = Timeout";
 CM_ SG_ 170 run_mode "0=Torque Mode, 1=Speed Mode";
 CM_ SG_ 170 relay_6_status "0=OFF, 1=ON";
 CM_ SG_ 170 relay_5_status "0=OFF, 1=ON";
@@ -164,7 +140,7 @@ CM_ SG_ 170 relay_3_status "0=OFF, 1=ON";
 CM_ SG_ 170 relay_2_status "0=OFF, 1=ON";
 CM_ SG_ 170 relay_1_status "0=OFF, 1=ON";
 CM_ SG_ 170 inverter_state "Different states for the inverter state machine";
-CM_ SG_ 170 pwm_frequency "The inverter PWM frequency";
+CM_ SG_ 170 pwm_frequency "The current active PWM frequency";
 CM_ SG_ 170 vsm_state "Different states for the vehicle state machine";
 CM_ SG_ 168 iq_feedback "The measured Iq current";
 CM_ SG_ 168 id_feedback "The measured Id current";
@@ -191,29 +167,15 @@ CM_ BO_ 163 "";
 CM_ SG_ 163 analog_input_6 "Voltage on Analog Input #6";
 CM_ SG_ 163 analog_input_5 "Voltage on Analog Input #5";
 CM_ SG_ 163 analog_input_4 "Voltage on Analog Input #4";
-CM_ SG_ 163 analog_input_3 "Voltage on Analog Input #3";
-CM_ SG_ 163 analog_input_2 "Voltage on Analog Input #2";
-CM_ SG_ 163 analog_input_1 "Voltage on Analog Input #1";
 CM_ SG_ 162 torque_shudder "Shudder compensation value of torque";
-CM_ SG_ 162 motor_temp "Motor Temperature Sensor";
-CM_ SG_ 162 hotspot_temp "RTD 5 (PT100) Temperature (Gen 2 only)";
-CM_ SG_ 162 coolant_temp "RTD 4 (PT100) Temperature (Gen 2 only)";
-CM_ SG_ 161 rtd3_temp "RTD input 3 (PT1000) Temperature";
 CM_ SG_ 161 rtd2_temp "RTD input 2 (PT1000) Temperature";
 CM_ SG_ 161 rtd1_temp "RTD input 1 (PT1000) Temperature";
-CM_ SG_ 161 ctrl_board_temp "Control Board Temperature";
-CM_ SG_ 160 gate_drive_temp "Gate Driver Board Temperature";
-CM_ SG_ 160 module_c_temp "IGBT Module C Temperature";
-CM_ SG_ 160 module_b_temp "IGBT Module B Temperature";
-CM_ SG_ 160 module_a_temp "IGBT Module A Temperature";
-CM_ BO_ 514 "Message sent by BMS for inverter DC current limiting.";
-CM_ SG_ 514 max_charge_curr "Maximum charge current from BMS";
-CM_ SG_ 514 max_dischg_curr "Maximum discharge current from BMS";
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
 BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_ "GenMsgCycleTime" BO_ 173 10;
 BA_ "GenMsgCycleTime" BO_ 172 10;
-BA_ "GenMsgCycleTime" BO_ 171 100;
-BA_ "GenMsgCycleTime" BO_ 170 100;
+BA_ "GenMsgCycleTime" BO_ 171 10;
+BA_ "GenMsgCycleTime" BO_ 170 10;
 BA_ "GenMsgCycleTime" BO_ 168 10;
 BA_ "GenMsgCycleTime" BO_ 167 10;
 BA_ "GenMsgCycleTime" BO_ 166 10;
@@ -222,7 +184,7 @@ BA_ "GenMsgCycleTime" BO_ 164 10;
 BA_ "GenMsgCycleTime" BO_ 163 10;
 BA_ "GenMsgCycleTime" BO_ 162 100;
 BA_ "GenMsgCycleTime" BO_ 161 100;
-BA_ "GenMsgCycleTime" BO_ 160 100;
+VAL_ 170 discharge_state 0 "Disabled" 1 "Enabled" 2 "Speed Check" 3 "Active" 4 "Complete" 5 "Error" 6 "Override" 7 "Timeout" ;
 VAL_ 170 inverter_state 0 "Power up" 1 "Stop" 2 "Open Loop" 3 "Closed Loop" 4 "Internal State" 5 "Internal State" 6 "Internal State" 7 "Internal State" 8 "Idle Run" 9 "Idle Stop" 10 "Internal State" 11 "Intern State" 12 "Internal State" ;
 VAL_ 170 vsm_state 0 "VSM Start State" 1 "Pre-Charge Init state" 2 "pre-charge active state" 3 "pre-charge complete state" 4 "VSM wait state" 5 "VSM ready state" 6 "Motor Running State" 7 "blink fault code state" 14 "Shutdown state for Key Switch Mode 1" 15 "Reset the inverter" ;
 
